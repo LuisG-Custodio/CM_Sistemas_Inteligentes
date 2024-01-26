@@ -238,7 +238,7 @@
                 <div class="form-group row">
                     <label class="col-form-label text-right col-lg-3 col-sm-12"> <b>Diagnostico</b> </label>
                     <div class="col-lg-4 col-md-4 col-sm-12">
-                        <input type="hidden" name="id_diagnostico" value="5" > Pendiente 
+                        <input type="hidden" name="id_diagnostico" value="5"> Pendiente
                     </div>
                 </div>
 
@@ -304,24 +304,37 @@
         // Evento change para el campo de selección de pacientes
         $('#id_paciente').change(function() {
             var selectedPatientId = parseInt($(this).val());
-            if (selectedPatientId !== '') {
-                var selectedPatient = {!! json_encode($pacientes) !!}.find(paciente => paciente.id ==
+
+            // Verificar si se seleccionó un paciente
+            if (!isNaN(selectedPatientId)) {
+                var selectedPatient = {!! json_encode($pacientes) !!}.find(paciente => paciente.id ===
                     selectedPatientId);
-                var birthDate = new Date(parseInt(selectedPatient.fecha_nac));
 
-                var today = new Date();
-                var age = today.getFullYear() - birthDate.getFullYear();
+                // Verificar si se encontró al paciente y si tiene fecha de nacimiento
+                if (selectedPatient && selectedPatient.fecha_nac) {
+                    var birthDate = new Date(selectedPatient.fecha_nac);
+                    var today = new Date();
+                    var age = today.getFullYear() - birthDate.getFullYear();
 
-                var consultorio;
-                if (age < 18) {
-                    consultorio = 1;
-                } else if (age >= 18 && age <= 45) {
-                    consultorio = 2;
-                } else if (age >45){
-                    consultorio = 3;
+                    var consultorio;
+                    if (age < 18) {
+                        consultorio = 1;
+                    } else if (age >= 18 && age <= 45) {
+                        consultorio = 2;
+                    } else {
+                        consultorio = 3;
+                    }
+
+                    $('#consultorio').val(consultorio);
+                } else {
+                    // Manejar el caso en el que no se pueda obtener la fecha de nacimiento
+                    console.error(
+                        'Error: No se pudo obtener la fecha de nacimiento del paciente seleccionado.'
+                        );
                 }
-
-                $('#consultorio').val(consultorio);
+            } else {
+                // Manejar el caso en el que no se seleccionó ningún paciente
+                console.error('Error: No se seleccionó ningún paciente.');
             }
         });
     });
