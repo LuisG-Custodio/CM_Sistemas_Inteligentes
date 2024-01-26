@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\SintomasController;
+use App\Http\Controllers\consultaController;
 use App\Http\Middleware\IsActive;
 use Illuminate\Support\Facades\Route;
 /*
@@ -139,6 +140,25 @@ Route::group(['middleware' => ['auth', 'is-active']], function() {
     //Actived
     Route::post('/users-active/{user}', [UserController::class, 'active'])->name('userActived');
 
+
+
+    /*
+    ***********************************************************************
+    >>>> consulta
+    ***********************************************************************
+    */
+
+    // List
+    Route::get('/consulta', [consultaController::class, 'index'])->name('consulta');
+
+    // Info
+    Route::get('/consulta/{user}', [consultaController::class, 'getInfo'])->name('infoconsulta');
+
+    // Update
+    Route::patch('/consulta-update/{user}', [consultaController::class, 'update'])->name('updateconsulta');
+
+    //Store
+    Route::post('/consulta', [consultaController::class, 'store'])->name('consultaStore');
 
 
 });
