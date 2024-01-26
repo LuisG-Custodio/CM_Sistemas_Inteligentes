@@ -152,10 +152,10 @@ Route::group(['middleware' => ['auth', 'is-active']], function() {
     Route::get('/consulta', [consultaController::class, 'index'])->name('consulta');
 
     // Info
-    Route::get('/consulta/{user}', [consultaController::class, 'getInfo'])->name('infoconsulta');
+    Route::get('/consulta/{consulta}', [consultaController::class, 'getInfo'])->name('infoconsulta');
 
     // Update
-    Route::patch('/consulta-update/{user}', [consultaController::class, 'update'])->name('updateconsulta');
+    Route::patch('/consulta-update/{consulta}', [consultaController::class, 'update'])->name('updateconsulta');
 
     //Store
     Route::post('/consulta', [consultaController::class, 'store'])->name('consultaStore');
