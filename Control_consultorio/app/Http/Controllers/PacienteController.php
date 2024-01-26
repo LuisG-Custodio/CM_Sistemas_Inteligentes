@@ -6,22 +6,23 @@ use App\Models\Paciente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\DB;
+
 class PacienteController extends Controller
 {
-     /**
-    * Create a new controller instance.
-    *
-    * @return void
-    */
-    
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+
     public function __construct()
     {
-        $this->middleware(function ($request, $next){
-             
+        $this->middleware(function ($request, $next) {
+
             if (!Gate::allows('system.paciente.list')) {
-                 abort(403, "No estas autorizado de acceder a esta zona");
+                abort(403, "No estas autorizado de acceder a esta zona");
             }
- 
+
             return $next($request);
         });
     }
@@ -45,14 +46,29 @@ class PacienteController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
-    }
+        // Validación de datos (puedes ajustar según tus necesidades)
+        $request->validate([
+            'name' => 'required|string|max:100',
+            'ap' => 'required|string|max:100',
+            'am' => 'required|string|max:100',
+            'fechan' => 'required|date',
+        ]);
 
+        // Crear un nuevo paciente usando el modelo
+        $paciente = new Paciente;
+        $paciente->Nombre = $request->input('name');
+        $paciente->AP = $request->input('ap');
+        $paciente->AM = $request->input('am');
+        $paciente->fecha_nac = $request->input('fechan');
+
+        // Guardar el paciente en la base de datos
+        $paciente->save();
+
+        // Redireccionar a la vista principal de pacientes
+        return redirect()->route('paciente')->with('success', 'Paciente creado exitosamente.');
+    }
     /**
      * Display the specified resource.
      */

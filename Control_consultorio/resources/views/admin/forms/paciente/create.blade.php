@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <form class="form" method="post" id="newFormPaciente" action="/paciente">
+            <form class="form" method="post" id="newFormPaciente" action="{{ route('pacienteStore') }}">
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="form-group row">
