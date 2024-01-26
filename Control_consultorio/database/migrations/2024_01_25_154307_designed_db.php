@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('AP', 100);
             $table->string('AM', 100);
             $table->date('fecha_nac');
+            $table->timestamps();
         });
 
         Schema::create('sintomas', function (Blueprint $table) {
