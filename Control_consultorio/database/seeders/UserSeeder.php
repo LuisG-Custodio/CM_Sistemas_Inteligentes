@@ -7,7 +7,6 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use phpDocumentor\Reflection\Types\Nullable;
 
-
 class UserSeeder extends Seeder
 {
     /**
@@ -17,9 +16,9 @@ class UserSeeder extends Seeder
     {
          
         $user = User::create([
-            'name'              => "Admin",
-            'last_name'         => "San Angel",
-            'email'             => "admin@sanangel.com.mx",
+            'name'              => "Hospital Corregidora",
+            'last_name'         => "Siglo XXIV",
+            'email'             => "admin@sigloxxiv.com.mx",
             'email_verified_at' => now(),
             'password'          => bcrypt('1234abcd')
             
@@ -28,7 +27,7 @@ class UserSeeder extends Seeder
         $user->assignRole(1);
 
         $users = collect([
-            ['name' => "Luis Guillermo", 'last_name' => "Custodio Serrano",     'email' => "custudio@sanangel.com.mx",                  'role' => 2],
+            ['name' => "Luis Guillermo",  'last_name' => "Custodio Serrano",           'email' => "custodio@sigloxxiv.com.mx",         'role' => 2],
         ]);
 
         $users->each(function ($user, $value) {

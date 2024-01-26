@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('breadcrumb')
-    <span class="text-muted font-weight-bold mr-4">Clínica San Angel</span>
+    <span class="text-muted font-weight-bold mr-4">Hospital Corregidora Siglo XXIV</span>
 @endsection
 
 @section('content')

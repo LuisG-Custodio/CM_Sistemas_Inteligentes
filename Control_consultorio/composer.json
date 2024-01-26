@@ -32,9 +32,14 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "Administration\\": "app/Administration",
+            "Components\\": "app/Components",
+            "Import\\": "app/Import",
+            "Exports\\": "app/Exports"
         }
     },
+   
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",

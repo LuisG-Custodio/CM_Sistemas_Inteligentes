@@ -5,7 +5,7 @@
     <!-- Establece la codificación de caracteres para la página -->
     <meta charset="utf-8" />
     <!-- Define el título de la página -->
-    <title>Clínica San Angel | Dashboard</title>
+    <title>Hospital Corregidora Siglo XXIV | Dashboard</title>
     <!-- Configura la vista para dispositivos móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     {{-- Se declaran los estilos a usar en la página --}}
@@ -32,7 +32,7 @@
     <!-- Enlace a la hoja de estilos del área lateral -->
     <link href="/assets/css/themes/layout/aside/dark.css?v=7.0.6" rel="stylesheet" type="text/css" />
     <!-- Enlace al ícono de acceso directo -->
-    <link rel="shortcut icon" href="/images/bm.ico" />
+    <link rel="shortcut icon" href="/images/icon.png" />
     <!-- Se agrega la librería del Toastr -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -59,7 +59,7 @@
     <div id="kt_header_mobile" class="header-mobile align-items-center  header-mobile-fixed ">
         <!--begin::Logo-->
         <a href="/dashboard">
-            <img width="80%" alt="Clínica San Angel" src="/images/icon.png" />
+            <img width="80%" alt="Hospital Corregidora Siglo XXIV" src="/images/icon.png" />
         </a>
         <!--end::Logo-->
 
@@ -104,7 +104,7 @@
                 <div class="brand flex-column-auto " id="kt_brand">
                     <!--begin::Logo-->
                     <a href="/dashboard" class="brand-logo">
-                        <img alt="Clínica San Angel" width="80%" src="/images/icon.png"/ style="width:50px; height:50px;">
+                        <img alt="Hospital Corregidora Siglo XXIV" width="80%" src="/images/icon.png"/ style="width:50px; height:50px;">
                     </a>
                     <!--end::Logo-->
 
@@ -221,7 +221,7 @@
 
                             {{-- Se define la sección del menú --}}
                             <li class="menu-section ">
-                                <h4 class="menu-text">PANEL CLÍNICA SAN ANGEL</h4>
+                                <h4 class="menu-text">PANEL HOSPITAL CORREGIDORA SIGLO XXIV</h4>
                                 <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                             </li>
                             {{-- Con "can" se fitra si el usuario logeado segun su rol tiene o no permiso de acceder a ese modulo 
