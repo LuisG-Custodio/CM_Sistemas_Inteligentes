@@ -165,7 +165,7 @@ class ConsultaController extends Controller
         $diagnostico = DB::table('Diag_Sint')
             ->select('Diag_Sint.id_diagnostico', 'Diagnosticos.nombre')
             ->join('Diagnosticos', 'Diag_Sint.id_diagnostico', '=', 'Diagnosticos.id')
-            ->whereIn('Diag_Sint.id_sintoma', function ($query) {
+            ->whereIn('Diag_Sint.id_sintoma', function ($query) use ($id_consulta) {
                 $query->select('id_sintoma')
                     ->where('id_consulta', $id_consulta)
                     ->from('Cons_Sint');
@@ -173,9 +173,10 @@ class ConsultaController extends Controller
             ->groupBy('Diag_Sint.id_diagnostico', 'Diagnosticos.nombre')
             ->orderByDesc(DB::raw('COUNT(Diag_Sint.id_diagnostico)'))
             ->first();
-            Consulta::where('id',$id_consulta)->update([
-                'id_diagnostico' => $diagnostico,
+            Consulta::where('id', $id_consulta)->update([
+                'id_diagnostico' => $diagnostico->id_diagnostico,
             ]);
+            
 
         return redirect()->route('consulta')->with('success', 'Consulta creada exitosamente.');
     }
