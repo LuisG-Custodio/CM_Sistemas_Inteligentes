@@ -40,7 +40,7 @@ return new class extends Migration
             $table->foreign('id_sintoma')->references('id')->on('sintomas');
         });
 
-        Schema::create('consulta', function (Blueprint $table) {
+        Schema::create('consultas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_paciente')->unsigned();
             $table->integer('consultorio');
@@ -51,13 +51,14 @@ return new class extends Migration
             $table->integer('id_diagnostico')->unsigned();
             $table->foreign('id_paciente')->references('id')->on('pacientes');
             $table->foreign('id_diagnostico')->references('id')->on('diagnosticos');
+            $table->timestamps(); 
         });
 
         Schema::create('cons_sint', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_consulta')->unsigned();
             $table->integer('id_sintoma')->unsigned();
-            $table->foreign('id_consulta')->references('id')->on('consulta');
+            $table->foreign('id_consulta')->references('id')->on('consultas');
             $table->foreign('id_sintoma')->references('id')->on('sintomas');
         });
 
@@ -103,7 +104,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('cons_sint');
-        Schema::dropIfExists('consulta');
+        Schema::dropIfExists('consultas');
         Schema::dropIfExists('diag_sint');
         Schema::dropIfExists('diagnosticos');
         Schema::dropIfExists('sintomas');

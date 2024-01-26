@@ -150,6 +150,8 @@ Route::group(['middleware' => ['auth', 'is-active']], function() {
 
     // List
     Route::get('/consulta', [consultaController::class, 'index'])->name('consulta');
+    // List JSON
+    Route::get('/consulta/list-consulta', [consultaController::class, 'getconsulta'])->name('consultaList');
 
     // Info
     Route::get('/consulta/{consulta}', [consultaController::class, 'getInfo'])->name('infoconsulta');

@@ -69,6 +69,15 @@ class PacienteController extends Controller
         // Redireccionar a la vista principal de pacientes
         return redirect()->route('paciente')->with('success', 'Paciente creado exitosamente.');
     }
+
+    public function getpaciente(Request $request)
+    {
+        // Obtiene la lista de compras
+        $paciente = Paciente::getpaciente();
+        // Retorna la lista de compras en formato JSON
+        return response()->json(['data' => $paciente]);
+    }
+    
     /**
      * Display the specified resource.
      */
