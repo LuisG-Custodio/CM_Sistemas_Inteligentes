@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::Class,
             UserSeeder::Class,
             DiagnosticoSeeder::class,
-           
+           DiagSintomasSeeder::class,
         ]);
     }
 }

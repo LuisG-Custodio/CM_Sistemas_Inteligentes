@@ -18,6 +18,7 @@ class DiagnosticoSeeder extends Seeder
             ['nombre' => 'Intoxicación alimentaria'],
             ['nombre' => 'Posible infección bacteriana o viral'],
             ['nombre' => 'Consulte con otro especialista'],
+            ['nombre' => 'Pendiente'],
         ];
 
         // Insert diagnostic data into the 'diagnosticos' table

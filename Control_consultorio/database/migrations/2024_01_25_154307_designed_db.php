@@ -62,40 +62,18 @@ return new class extends Migration
             $table->foreign('id_sintoma')->references('id')->on('sintomas');
         });
 
-       
+    
 
-      
-        // DB::table('diagnosticos')->insert([
-        //     ['nombre' => 'Gastritis'],
-        //     ['nombre' => 'Intoxicación alimentaria'],
-        //     ['nombre' => 'Posible infección bacteriana o viral'],
-        //     ['nombre' => 'Consulte con otro especialista'],
-        // ]);
-
-        // DB::table('sintomas')->insert([
-        //     ['nombre' => 'El dolor es intenso y repentino'],
-        //     ['nombre' => 'Dolor ligero'],
-        //     ['nombre' => 'Nausas y vomito'],
-        //     ['nombre' => 'Vomito explosivos y repetitivos'],
-        //     ['nombre' => 'Diarrea'],
-        //     ['nombre' => 'Aparición de síntomas en las últimas 6-8 horas después de comer'],
-        //     ['nombre' => 'Dolor empeora al consumir alimentos, café o medicamentos'],
-        //     ['nombre' => 'Consumió alimentos de alto riesgo'],
-        // ]);
-
-        // DB::table('diag_sint')->insert([
-        //     ['id_sintoma' => 2, 'id_diagnostico' => 1],
-        //     ['id_sintoma' => 3, 'id_diagnostico' => 1],
-        //     ['id_sintoma' => 7, 'id_diagnostico' => 1],
-        //     ['id_sintoma' => 2, 'id_diagnostico' => 2],
-        //     ['id_sintoma' => 3, 'id_diagnostico' => 2],
-        //     ['id_sintoma' => 4, 'id_diagnostico' => 2],
-        //     ['id_sintoma' => 6, 'id_diagnostico' => 2],
-        //     ['id_sintoma' => 8, 'id_diagnostico' => 2],
-        //     ['id_sintoma' => 1, 'id_diagnostico' => 3],
-        //     ['id_sintoma' => 2, 'id_diagnostico' => 3],
-        //     ['id_sintoma' => 5, 'id_diagnostico' => 3],
-        // ]);
+        DB::table('sintomas')->insert([
+            ['nombre' => 'El dolor es intenso y repentino'],
+            ['nombre' => 'Dolor ligero'],
+            ['nombre' => 'Nausas y vomito'],
+            ['nombre' => 'Vomito explosivos y repetitivos'],
+            ['nombre' => 'Diarrea'],
+            ['nombre' => 'Aparición de síntomas en las últimas 6-8 horas después de comer'],
+            ['nombre' => 'Dolor empeora al consumir alimentos, café o medicamentos'],
+            ['nombre' => 'Consumió alimentos de alto riesgo'],
+        ]);
     }
 
     /**
