@@ -47,7 +47,15 @@ var KTDatatableAutoColumnHideDemo = function () {
 
             // columns definition
             columns: [
-              
+                {
+                    field: 'id_paciente',
+                    title: 'Paciente',
+                    sortable: 'asc',
+                    template: function (row) {
+                        return row.Nombre + ' ' + row.AP + ' ' + row.AM;
+                    }
+                },
+                
                 {
                     field: 'consultorio',
                     title: 'Consultorio',
@@ -99,31 +107,37 @@ var KTDatatableAutoColumnHideDemo = function () {
 
                     }
                 },
-               
-
+                {
+                    field: 'id_diagnostico',
+                    title: 'Diagnóstico',
+                    sortable: 'asc',
+                    template: function (row) {
+                        return row.nombre; 
+                    }
+                }
 
             ],
 
         });
 
-        $('#kt_datatable_search_status').on('change', function () {
-            datatable.search($(this).val(), 'status');
-        });
+$('#kt_datatable_search_status').on('change', function () {
+    datatable.search($(this).val(), 'status');
+});
 
-        $('#kt_datatable_search_authorized').on('change', function () {
-            datatable.search($(this).val(), 'authorized');
-        });
+$('#kt_datatable_search_authorized').on('change', function () {
+    datatable.search($(this).val(), 'authorized');
+});
 
-        $('#kt_datatable_search_status').selectpicker();
-        $('#kt_datatable_search_authorized').selectpicker();
+$('#kt_datatable_search_status').selectpicker();
+$('#kt_datatable_search_authorized').selectpicker();
     };
 
-    return {
-        // public functions
-        init: function () {
-            demo();
-        },
-    };
+return {
+    // public functions
+    init: function () {
+        demo();
+    },
+};
 }();
 
 jQuery(document).ready(function () {

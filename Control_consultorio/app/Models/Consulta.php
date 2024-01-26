@@ -30,6 +30,7 @@ class Consulta extends Model
 
     public static function getconsulta()
     {
+        
         // Consulta a la base de datos para obtener información de la tabla 'consultas'
         // y unir la tabla 'pacientes' utilizando la relación 'id_paciente'.
         $consulta = DB::table('consultas')

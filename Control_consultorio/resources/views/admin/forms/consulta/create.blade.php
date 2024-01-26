@@ -238,14 +238,7 @@
                 <div class="form-group row">
                     <label class="col-form-label text-right col-lg-3 col-sm-12"> <b>Diagnostico</b> </label>
                     <div class="col-lg-4 col-md-4 col-sm-12">
-                        <select class="form-control" id="id_diagnostico " name="id_diagnostico">
-                            <option value="">Selecciona un diagnostico</option>
-                            @foreach ($diagnosticos as $diagnostico)
-                                <option value="{{ $diagnostico->id }}">
-                                    {{ $diagnostico->nombre }}
-                                </option>
-                            @endforeach
-                        </select>
+                        <input type="hidden" name="id_diagnostico" value="5" > Pendiente 
                     </div>
                 </div>
 
@@ -304,7 +297,9 @@
             localStorage.setItem('storedAnswers', JSON.stringify(answers));
         });
     });
+</script>
 
+<script>
     $(document).ready(function() {
         // Evento change para el campo de selección de pacientes
         $('#id_paciente').change(function() {
@@ -322,7 +317,7 @@
                     consultorio = 1;
                 } else if (age >= 18 && age <= 45) {
                     consultorio = 2;
-                } else {
+                } else if (age >45){
                     consultorio = 3;
                 }
 
