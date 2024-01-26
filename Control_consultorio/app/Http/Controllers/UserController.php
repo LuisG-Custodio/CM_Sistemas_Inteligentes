@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Administration\Users\Create\Add;
-use Administration\Users\Update\Adjust;
 
+
+use Administration\Users\Update\Adjust;
+use Administration\Users\Create\Add;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Response;

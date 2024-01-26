@@ -72,21 +72,12 @@
     <script>
         
         var HOST_URL = "{{ env('APP_HOST', 'http://127.0.0.1:8000') }}";
-        var editGroup = false;
-        var deleteGroup = false;
-
-        @can('system.groups.edit')
-            editGroup = true;
-        @endcan
-
-        @can('system.groups.delete')
-            deleteGroup = true;
-        @endcan
-        
+       
+ 
     </script>
 
     <!--begin::Page Scripts(used by this page)-->
-    <script src="/js/admin/groups.js?v=1.0.3"></script>
+    <script src="/js/admin/consulta.js?v=1.0.4"></script>
     <!--end::Page Scripts-->
 
 

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Clinica San Angel</title>
+    <title>Hospital Corregidora Siglo XXIV</title>
     <link rel="shortcut icon" href="/images/icon.png" />
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
             </div>
         @endif
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-            <img src="{{ asset('images/icon.png') }}" alt="Clinica San Angel" style="width:450px; height:450px;">
+            <img src="{{ asset('images/icon.png') }}" alt="Hospital Corregidora Siglo XXIV" style="width:450px; height:450px;">
         </div>
         
     </div>
