@@ -226,22 +226,24 @@
                             </li>
                             {{-- Con "can" se fitra si el usuario logeado segun su rol tiene o no permiso de acceder a ese modulo 
                                             Si se tiene permiso se muestra la opción --}}
-                            @can('system.store.list')
-                                <li class="menu-item @if ($PAGE_NAVIGATION == 'STORE') menu-item-active @endif"
+                            @can('system.paciente.list')
+                                <li class="menu-item @if ($PAGE_NAVIGATION == 'PACIENTE') menu-item-active @endif"
                                     aria-haspopup="true">
-                                    <a href="/store" class="menu-link ">
+                                    <a href="/paciente" class="menu-link ">
+
+                                        
                                         <span class="svg-icon menu-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
                                                 viewBox="0 0 24 24" version="1.1">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <polygon points="0 0 24 0 24 24 0 24" />
                                                     <path
-                                                        d="M12,3 C16.418278,3 20,6.581722 20,11 L20,21 C20,21.5522847 19.5522847,22 19,22 L5,22 C4.44771525,22 4,21.5522847 4,21 L4,11 C4,6.581722 7.581722,3 12,3 Z M9,10 C7.34314575,10 6,11.3431458 6,13 C6,14.6568542 7.34314575,16 9,16 L15,16 C16.6568542,16 18,14.6568542 18,13 C18,11.3431458 16.6568542,10 15,10 L9,10 Z"
-                                                        fill="#000000" />
+                                                        d="M18,8 L16,8 C15.4477153,8 15,7.55228475 15,7 C15,6.44771525 15.4477153,6 16,6 L18,6 L18,4 C18,3.44771525 18.4477153,3 19,3 C19.5522847,3 20,3.44771525 20,4 L20,6 L22,6 C22.5522847,6 23,6.44771525 23,7 C23,7.55228475 22.5522847,8 22,8 L20,8 L20,10 C20,10.5522847 19.5522847,11 19,11 C18.4477153,11 18,10.5522847 18,10 L18,8 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z"
+                                                        fill="#000000" fill-rule="nonzero" opacity="0.3" />
                                                     <path
-                                                        d="M15,14 C14.4477153,14 14,13.5522847 14,13 C14,12.4477153 14.4477153,12 15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 Z M9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 C9.55228475,12 10,12.4477153 10,13 C10,13.5522847 9.55228475,14 9,14 Z"
-                                                        fill="#000000" opacity="0.3" />
+                                                        d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z"
+                                                        fill="#000000" fill-rule="nonzero" />
                                                 </g>
                                             </svg>
                                         </span>
@@ -253,71 +255,31 @@
 
                             {{-- Con "can" se fitra si el usuario logeado segun su rol tiene o no permiso de acceder a ese modulo 
                                             Si se tiene permiso se muestra la opción --}}
-                            @can('system.shop.list')
-                                <li class="menu-item @if ($PAGE_NAVIGATION == 'SHOP') menu-item-active @endif"
+                            @can('system.sintomas.list')
+                                <li class="menu-item @if ($PAGE_NAVIGATION == 'SINTOMA') menu-item-active @endif"
                                     aria-haspopup="true">
-                                    <a href="/shops" class="menu-link ">
+                                    <a href="/sintomas" class="menu-link ">
                                         <span class="svg-icon menu-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
                                                 viewBox="0 0 24 24" version="1.1">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                     <rect x="0" y="0" width="24" height="24" />
+                                                    <rect fill="#000000" opacity="0.3" x="2" y="3" width="20" height="18"
+                                                        rx="2" />
                                                     <path
-                                                        d="M18.1446364,11.84388 L17.4471627,16.0287218 C17.4463569,16.0335568 17.4455155,16.0383857 17.4446387,16.0432083 C17.345843,16.5865846 16.8252597,16.9469884 16.2818833,16.8481927 L4.91303792,14.7811299 C4.53842737,14.7130189 4.23500006,14.4380834 4.13039941,14.0719812 L2.30560137,7.68518803 C2.28007524,7.59584656 2.26712532,7.50338343 2.26712532,7.4104669 C2.26712532,6.85818215 2.71484057,6.4104669 3.26712532,6.4104669 L16.9929851,6.4104669 L17.606173,3.78251876 C17.7307772,3.24850086 18.2068633,2.87071314 18.7552257,2.87071314 L20.8200821,2.87071314 C21.4717328,2.87071314 22,3.39898039 22,4.05063106 C22,4.70228173 21.4717328,5.23054898 20.8200821,5.23054898 L19.6915238,5.23054898 L18.1446364,11.84388 Z"
-                                                        fill="#000000" opacity="0.3" />
-                                                    <path
-                                                        d="M6.5,21 C5.67157288,21 5,20.3284271 5,19.5 C5,18.6715729 5.67157288,18 6.5,18 C7.32842712,18 8,18.6715729 8,19.5 C8,20.3284271 7.32842712,21 6.5,21 Z M15.5,21 C14.6715729,21 14,20.3284271 14,19.5 C14,18.6715729 14.6715729,18 15.5,18 C16.3284271,18 17,18.6715729 17,19.5 C17,20.3284271 16.3284271,21 15.5,21 Z"
-                                                        fill="#000000" />
+                                                        d="M9.9486833,13.3162278 C9.81256925,13.7245699 9.43043041,14 9,14 L5,14 C4.44771525,14 4,13.5522847 4,13 C4,12.4477153 4.44771525,12 5,12 L8.27924078,12 L10.0513167,6.68377223 C10.367686,5.73466443 11.7274983,5.78688777 11.9701425,6.75746437 L13.8145063,14.1349195 L14.6055728,12.5527864 C14.7749648,12.2140024 15.1212279,12 15.5,12 L19,12 C19.5522847,12 20,12.4477153 20,13 C20,13.5522847 19.5522847,14 19,14 L16.118034,14 L14.3944272,17.4472136 C13.9792313,18.2776054 12.7550291,18.143222 12.5298575,17.2425356 L10.8627389,10.5740611 L9.9486833,13.3162278 Z"
+                                                        fill="#000000" fill-rule="nonzero" />
+                                                    <circle fill="#000000" opacity="0.3" cx="19" cy="6" r="1" />
                                                 </g>
                                             </svg>
                                         </span>
-                                        <span class="menu-text">Compras</span>
+                                        <span class="menu-text">Sintomas</span>
                                     </a>
                                 </li>
                             @endcan
 
 
-                            {{-- Con "can" se fitra si el usuario logeado segun su rol tiene o no permiso de acceder a ese modulo 
-                                            Si se tiene permiso se muestra la opción --}}
-                            @can('system.management.list')
-                                <li class="menu-item @if ($PAGE_NAVIGATION == 'MANAGEMENT') menu-item-active @endif"
-                                    aria-haspopup="true">
-                                    <a href="/gerencia" class="menu-link ">
-                                        <span class="svg-icon menu-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
-                                                viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24" />
-                                                    <path
-                                                        d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z"
-                                                        fill="#000000" opacity="0.3" />
-                                                    <path
-                                                        d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z"
-                                                        fill="#000000" />
-                                                    <rect fill="#000000" opacity="0.3" x="10" y="9" width="7"
-                                                        height="2" rx="1" />
-                                                    <rect fill="#000000" opacity="0.3" x="7" y="9" width="2"
-                                                        height="2" rx="1" />
-                                                    <rect fill="#000000" opacity="0.3" x="7" y="13" width="2"
-                                                        height="2" rx="1" />
-                                                    <rect fill="#000000" opacity="0.3" x="10" y="13" width="7"
-                                                        height="2" rx="1" />
-                                                    <rect fill="#000000" opacity="0.3" x="7" y="17" width="2"
-                                                        height="2" rx="1" />
-                                                    <rect fill="#000000" opacity="0.3" x="10" y="17" width="7"
-                                                        height="2" rx="1" />
-                                                </g>
-                                            </svg>
-                                        </span>
-                                        <span class="menu-text">Consulta</span>
-                                    </a>
-                                </li>
-                            @endcan
-
-
-                           
 
                            
                             {{-- Se define la sección del menú --}}

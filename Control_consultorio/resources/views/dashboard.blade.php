@@ -90,13 +90,13 @@
                                         </svg><!--end::Svg Icon--></span>
                                     <br>
 
-                                    <a href="/shops" class="text-success font-weight-bold font-size-h6 mt-2">
+                                    <a href="/paciente" class="text-success font-weight-bold font-size-h6 mt-2">
                                         Pacientes
                                     </a>
                                 </div>
                             @endcan
 
-                            @can('system.consulta.list')
+                            @can('system.sintomas.list')
                                 <div class="col bg-light-warning px-6 py-8 rounded-xl">
                                     <span
                                         class="svg-icon svg-icon-warning svg-icon-4x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Devices\Diagnostics.svg--><svg
@@ -112,8 +112,8 @@
                                                 <circle fill="#000000" opacity="0.3" cx="19" cy="6" r="1" />
                                             </g>
                                         </svg><!--end::Svg Icon--></span>
-                                    <a href="/seller" class="text-warning font-weight-bold font-size-h6 mt-2">
-                                        Consultas
+                                    <a href="/sintomas" class="text-warning font-weight-bold font-size-h6 mt-2">
+                                        Sintomas
                                     </a>
                                 </div>
                             @endcan

@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GroupController;
+use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\SintomasController;
 use App\Http\Middleware\IsActive;
 use Illuminate\Support\Facades\Route;
 /*
@@ -72,6 +74,44 @@ Route::group(['middleware' => ['auth', 'is-active']], function() {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
    
 
+    /*
+    ***********************************************************************
+    >>>> Paciente 
+    ***********************************************************************
+    */
+    
+    // List
+    Route::get('/paciente', [PacienteController::class, 'index'])->name('paciente');
+
+    // List JSON
+    Route::get('/paciente/list-paciente', [PacienteController::class, 'getpaciente'])->name('pacienteList');
+
+    // Info
+    Route::get('/paciente/{paciente}', [PacienteController::class, 'getInfo'])->name('infopaciente');
+
+    //Store
+    Route::post('/paciente', [PacienteController::class, 'store'])->name('pacienteStore');
+
+    
+    /*
+    ***********************************************************************
+    >>>> Sintomas 
+    ***********************************************************************
+    */
+    
+    // List
+    Route::get('/sintomas', [SintomasController::class, 'index'])->name('sintomas');
+
+    // List JSON
+    Route::get('/sintomas/list-sintomas', [SintomasController::class, 'getsintomas'])->name('sintomasList');
+
+    // Info
+    Route::get('/sintomas/{sintomas}', [SintomasController::class, 'getInfo'])->name('infosintomas');
+
+    //Store
+    Route::post('/sintomas', [SintomasController::class, 'store'])->name('sintomasStore');
+
+    
     /*
     ***********************************************************************
     >>>> Users
