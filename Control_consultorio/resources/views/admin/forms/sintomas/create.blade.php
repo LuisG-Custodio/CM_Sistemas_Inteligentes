@@ -31,8 +31,7 @@
                     </div>
                 </div>
             </div>
-
-            <form class="form" method="post" id="newFormSintoma" action="/sintoma">
+            <form class="form" method="post" id="newFormSintoma" action="/sintomas"> <!-- Corrected action attribute -->
                 {{ csrf_field() }}
                 <div class="modal-body">
 

@@ -29,7 +29,7 @@ class ConsultaController extends Controller
         $pacientes = Paciente::all();
         $diagnosticos = Diagnostico::all();
 
-        return view('admin.consulta.consulta_list', compact('PAGE_NAVIGATION', 'pacientes','diagnosticos'));
+        return view('admin.consulta.consulta_list', compact('PAGE_NAVIGATION', 'pacientes', 'diagnosticos'));
     }
 
     public function store(Request $request)
@@ -50,7 +50,13 @@ class ConsultaController extends Controller
 
         // Asignar consultorio automáticamente según la edad
         $consultorio = $this->asignarConsultorio($edad);
+        
+        // Verificar si el consultorio ya tiene 50 registros
+        $registrosConsultorio = Consulta::where('consultorio', $consultorio)->count();
 
+        if ($registrosConsultorio >= 50) {
+            return redirect()->route('consulta')->with('error', 'El consultorio está lleno, no se pueden agregar más pacientes.');
+        }
         // Crear la nueva consulta
         $consulta = new Consulta;
         $consulta->id_paciente = $request->input('id_paciente');
